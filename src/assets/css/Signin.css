@@ -1,0 +1,20 @@
+body{
+    background-image: url("../images/black2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#submit{
+    background-color: #C345D6;
+}
+
+p{
+    color: rgb(167, 164, 164);
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: #C345D6;
+}
