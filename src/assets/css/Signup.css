@@ -22,3 +22,9 @@ a:hover{
 .btn{
     background-color: #C345D6;
 }
+
+@media screen and (max-width:767px) {
+    body {
+        height: 100vh;
+    }
+}

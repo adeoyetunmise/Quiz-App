@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import "../assets/css/Signup.css";
+import logo from '../assets/images/Removed2.png'
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 
 const Signup = () => {
+  const [Game, setGame] = useState([])
+
+
     let lower = new RegExp('(?=.*[a-z])');
     let upper = new RegExp('(?=.*[A-Z])');
     let number = new RegExp('(?=.*[0-9])');
@@ -35,22 +39,39 @@ const Signup = () => {
     })
   return (
    <>
+   <nav className="navbar navbar-expand-lg navbar-light shadow-sm " >
+  <div className="container-fluid">
+    <Link to='/' className="navbar-brand " ><img src={logo} width={120}  height={50}  alt="" /></Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+      
+      <form className="d-flex">
+        <button className="btn btn-outline-light  mx-5" type="submit"><Link to='/signup'> Create Account</Link></button>
+        <button className="btn btn-outline-light" type="submit"><Link to='/signin'>Sign In</Link></button>
+      </form>
+   
+  </div>
+</nav>
+
+          
+
+
    <center>
         
         <h2 className="text-light my-5">Sign Up.</h2>
         <div className="container-fluid">
-        <div className="row w-25 shadow-sm col-lg-4">
-          
-            <button className="btn btn-dark my-2 col-12"> <i class="fa fa-google-plus-official" aria-hidden="true"></i> Sign Up With Google</button>
-            <button className="btn btn-dark my-2"><i class="fa fa-facebook-official" aria-hidden="true"></i> Sign Up With Facebook</button>
+          <div className="row col-lg-3 shadow-sm mx-2">
+            <button className="btn btn-dark my-2"><i class="fa fa-google-plus-official" aria-hidden="true"></i> Continue With Google</button>
+            <button className="btn btn-dark my-2"> <i class="fa fa-facebook-official" aria-hidden="true"></i> Continue With Facebook</button>
           </div>
-        </div>
+</div>
        
-        <h6 className="text-light">------------Or------------</h6>
+        <h6 className="text-light">------------&nbsp;&nbsp;&nbsp;&nbsp;Or&nbsp;&nbsp;&nbsp;&nbsp;------------</h6>
 
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-9 shadow-sm mx-auto">
+          <div className="row col-lg-3 ">
+            <div className="col-12 shadow-sm mx-auto">
               <form action="" onSubmit={formik.handleSubmit}>
               <input
                   type="text"
@@ -58,7 +79,7 @@ const Signup = () => {
                   name='firstname'
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className="form-control my-2 bg-dark text-light w-25"
+                  className="form-control my-2 bg-dark text-light"
                 />
                 {formik.touched.firstname && (
                 <div className="text-danger">{formik.errors.firstname}</div>
@@ -70,7 +91,7 @@ const Signup = () => {
                   name='lastname'
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className="form-control my-2 bg-dark text-light w-25"
+                  className="form-control my-2 bg-dark text-light"
                 />
                 {formik.touched.lastname && (
                 <div className="text-danger">{formik.errors.lastname}</div>
@@ -82,7 +103,7 @@ const Signup = () => {
                   name='email'
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className="form-control my-2 bg-dark text-light w-25"
+                  className="form-control my-2 bg-dark text-light"
                 />
                 {formik.touched.email && (
                 <div className="text-danger">{formik.errors.email}</div>
@@ -93,13 +114,13 @@ const Signup = () => {
                   name='password'
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className="form-control my-2 bg-dark text-light w-25"
+                  className="form-control my-2 bg-dark text-light"
                 />
                 {formik.touched.password && (
                 <div className="text-danger">{formik.errors.password}</div>
               )}
                 
-            <button type="submit" className="btn btn-dark my-2 w-25 " id="submit">Next</button>
+            <button type="submit" className="btn btn-dark my-2 " id="submit">Next</button>
 
               </form>
             </div>
