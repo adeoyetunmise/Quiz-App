@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Home from './components/Home'
 import {Route, Routes} from "react-router-dom"
 import Dashboard from './components/Dashboard';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
@@ -16,9 +17,13 @@ function App() {
    <Route path='/signin' element={<Signin/>}/>
    <Route path='/dashboard' element={<Dashboard/>}/>
    
+   
   </Routes>
+
+ 
   
   </>
+   
   );
 }
 

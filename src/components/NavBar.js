@@ -1,12 +1,10 @@
-import React from 'react'
-import logo from '../assets/images/tenaThomas.png'
-import "../assets/css/Home.css";
 import { Link } from "react-router-dom";
+import logo from '../assets/images/Removed2.png'
 
-const Home = () => {
+const NavBar = () => {
   return (
-   <>
-   <nav className="navbar navbar-expand-lg navbar-light shadow-sm p-0" >
+    <>
+     <nav className="navbar navbar-expand-lg navbar-light shadow-sm py-2" >
   <div className="container-fluid p-0">
     <Link to='/' className="navbar-brand p-0" style={{borderRadius:"15px"}} ><img className='p-0' src={logo} width={65}  alt="" /></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,12 +20,8 @@ const Home = () => {
    
   </div>
 </nav>
-
-
-<footer></footer>
-   
-   </>
+    </>
   )
 }
 
-export default Home
+export default NavBar

@@ -1,11 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/images/Removed2.png'
 import "../assets/css/Signin.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 const Signin = () => {
+  let receive = JSON.parse(localStorage.getItem("quiz"));
+  const navigate = useNavigate();
+  const [userLogin,setuserLogin] = useState([]);
+  const [message,setmessage] = useState("")
   let lower = new RegExp('(?=.*[a-z])');
   let upper = new RegExp('(?=.*[A-Z])');
   let number = new RegExp('(?=.*[0-9])');
@@ -17,7 +21,23 @@ const Signin = () => {
         },
     
         onSubmit: (values) => {
-          console.log(values);
+          receive.filter((items) => {
+            if (items.email === values.email && items.password === values.password) {
+              setuserLogin(userLogin.push(values))
+              localStorage.login = JSON.stringify(userLogin)
+              navigate("/dashboard")
+              
+            }
+            else if (values.email !== items.email && values.password !== items.password){
+              setmessage("Invalid login details")
+            }
+            else{
+              setmessage("Inavalid login details")
+            }
+         
+          })
+          
+          // console.log(values);
         },
 
         validationSchema: yup.object({
@@ -35,11 +55,12 @@ const Signin = () => {
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-      
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <form className="d-flex">
         <button className="btn btn-outline-light  mx-5" type="submit"><Link to='/signup'> Create Account</Link></button>
         <button className="btn btn-outline-light" type="submit"><Link to='/signin'>Sign In</Link></button>
       </form>
+      </div>
    
   </div>
 </nav>
@@ -97,7 +118,7 @@ const Signin = () => {
   </div>
 </div>
           <p className="">Don't have an account? <Link to="/signup">Create Account</Link></p>
-          <Link to="/">Forgot Password?</Link>
+          <Link to="/signup">Forgot Password?</Link>
         </div>
 
        
