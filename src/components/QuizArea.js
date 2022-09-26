@@ -1,4 +1,4 @@
-//how to use Api?
+//how to get
 
 
 
