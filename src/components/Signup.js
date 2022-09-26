@@ -37,7 +37,7 @@ const Signup = () => {
           setGame(allGame)
           localStorage.setItem("quiz",JSON.stringify(Game))
           Navigate("/signin")
-          // console.log(values);
+        
           
         },
 

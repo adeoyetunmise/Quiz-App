@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Home from './components/Home'
 import {Route, Routes} from "react-router-dom"
 import Dashboard from './components/Dashboard';
+import QuizArea from './components/QuizArea'
 import NavBar from './components/NavBar';
 
 function App() {
@@ -16,9 +17,12 @@ function App() {
    < Route path='/signup' element={<Signup/>}/>
    <Route path='/signin' element={<Signin/>}/>
    <Route path='/dashboard' element={<Dashboard/>}/>
+   <Route path='/quizarea' element={<QuizArea/>}/>
    
    
   </Routes>
+<p/>
+<p/>
 
  
   
