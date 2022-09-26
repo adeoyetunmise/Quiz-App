@@ -14,8 +14,8 @@ const Home = () => {
     </button>
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <form className="d-flex ">
-        <button className="btn btn-outline-light  mx-3" type="submit"><Link to='/signup'> Create Account</Link></button>
-        <button className="btn btn-outline-light mx-4" type="submit"><Link to='/signin'>Sign In</Link></button>
+        <a className="btn btn-outline-light  mx-3" type="submit"><Link to='/signup'> Create Account</Link></a>
+        <a className="btn btn-outline-light mx-4"><Link to='/signin'>Sign In</Link></a>
       </form>
       </div>
       

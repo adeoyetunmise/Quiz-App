@@ -106,7 +106,7 @@ const Dashboard = (p) => {
                 <div className="row mx-auto my-2">
                     <div className="row col-lg mx-lg-3 mx-auto mt-5 align-items-center justify-content-center" >
                         
-                        <Link to="/" className="col-lg-3">
+                        <Link to="/quizarea" className="col-lg-3">
                             <div className="my-1 mx-lg-3 p-1" id="card">
                                 <h3>Take Test <i class="fa-regular fa-square-check"></i></h3>
                                 <img src={logo2} width={140} alt="" />

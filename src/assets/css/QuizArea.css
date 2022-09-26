@@ -1,0 +1,27 @@
+#options{
+  height: 60px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0.15);
+  background:  #4f065a;
+  backdrop-filter: blur(20px);
+}
+.btn{
+    background: none;
+}
+.btn:hover{
+    color: black;
+}
+
+.btn-end {
+    transform: translateX(900px);
+}
+
+@media screen and (max-width:475px){
+    .btn-end {
+        transform: translateX(0px);
+    }
+
+    
+}
