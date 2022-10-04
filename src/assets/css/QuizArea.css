@@ -7,11 +7,11 @@
   background:  #4f065a;
   backdrop-filter: blur(20px);
 }
-.btn{
+#quizbtn{
     background: none;
 }
 .btn:hover{
-    color: black;
+    color: white;
 }
 
 .btn-end {

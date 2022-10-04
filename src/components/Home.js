@@ -13,7 +13,7 @@ const Home = () => {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <form className="d-flex ">
+      <form className="d-flex navbtn ">
         <a className="btn btn-outline-light  mx-3" type="submit"><Link to='/signup'> Create Account</Link></a>
         <a className="btn btn-outline-light mx-4"><Link to='/signin'>Sign In</Link></a>
       </form>
@@ -22,7 +22,14 @@ const Home = () => {
    
   </div>
 </nav>
+<div className='container iconbtn'>
+    <a href="#" className='btn'> <i class="fa fa-facebook-f" aria-hidden="true"></i></a>
+    <a href="#" className='btn'><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="#" className='btn'><i class="fa fa-google" aria-hidden="true"></i></a>
+    <a href="#" className='btn'><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <a href="#" className='btn'><i class="fa fa-youtube" aria-hidden="true"></i></a>
 
+</div>
 
 <footer></footer>
    

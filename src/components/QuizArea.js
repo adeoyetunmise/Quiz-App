@@ -2,8 +2,44 @@ import React from 'react'
 import "../assets/css/QuizArea.css";
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/images/Removed2.png'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const QuizArea = () => {
+    const [quiz, setquiz] = useState([])
+    const [quizArray, setquizArray] = useState({})
+    const [activeIndex, setactiveIndex] = useState(1)
+    let currentUser = JSON.parse(localStorage.currentUser)
+    let getQuiz = JSON.parse(localStorage.questions)
+    const getRandomQuestion = getQuiz.sort(
+        ()=>
+        0.5 - Math.random()
+    );
+    localStorage.randomQuestion = JSON.stringify(getRandomQuestion)
+    const getQuestion =JSON.parse(localStorage.randomQuestion)
+
+    useEffect(() => {
+      setquiz(getQuestion)
+      setquizArray(getQuestion[0])
+      console.log(getQuestion);
+
+    
+     
+    }, [])
+    
+
+    let answer = quizArray.correctOption
+    const nextQuestion =()=>{
+        let i = activeIndex + 1
+        if (i === quiz.length) {
+            return console.log("done");
+            
+        }
+        setactiveIndex(i)
+        console.log(activeIndex + 1)
+        console.log(quiz);  
+        setquizArray(quiz[activeIndex])
+      }
     return (
         <>
          <nav className="navbar navbar-expand-lg navbar-light shadow-sm " >
@@ -27,7 +63,7 @@ const QuizArea = () => {
                 <div className="container-fluid mt-lg-0">
                     <div className="row mx-auto">
                         <h5 className=' card text-dark mt-5 row col-lg mx-lg-3 mx-auto align-items-center justify-content-center'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis exercitationem quam perspiciatis reiciendis sint accusamus quas fugit, ex dolores sapiente ab, voluptates ipsa itaque laboriosam eius numquam quidem. Hic, ducimus! lo</h5>
+                           {quizArray.question}</h5>
                     </div>
                     <h2 className='text-light mt-5 text-center col-lg'>Options</h2>
                 </div>
@@ -59,9 +95,9 @@ const QuizArea = () => {
 
             <div className="container px-5" id="contain-cards">
                  <div className="container-fluid my-5 px-4 d-flex">
-                        <div className='mx-2'><button className='btn btn-outline-light'>Previous</button></div>
-                        <div className='mx-2'><button className='btn btn-outline-light'>Next</button></div>
-                        <div className='mx-2 btn-end'><button  className='btn btn-outline-light'>Submit</button></div>
+                        <div className='mx-2'><button className='btn btn-outline-light' id='quizbtn'>Previous</button></div>
+                        <div className='mx-2'><button className='btn btn-outline-light'  id='quizbtn'>Next</button></div>
+                        <div className='mx-2 btn-end'><button  className='btn btn-outline-light' id='quizbtn'>Submit</button></div>
                 </div>
               
             </div>
